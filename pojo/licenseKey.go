@@ -45,7 +45,6 @@ func (l *LicenseModel) GetKey(key string) {
 	if err != nil {
 		l.s.Code = 1
 		l.s.Msg = "程序异常!传入的json不正确,请检查!"
-		return
 	} else {
 		l.LicenseKey = resultKey
 	}
