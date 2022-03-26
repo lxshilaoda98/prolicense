@@ -9,7 +9,7 @@ func main() {
 	var li = pojo.LicenseModel{}
 
 	//li.CheckKey("asdiuqwjasksdiasdlwoerfasdwerfas")
-	//传入li的时间。如果为0就是永不过期
+	//传入li的时间。如果为0就是永不过期1
 
 	li.EndTime = 0
 	li.GetKey("Lsdiuqwjasksdiasdlwoerfasdwerfas") //通过公有key获取private的key
