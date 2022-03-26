@@ -27,7 +27,6 @@ func (l *LicenseModel) CheckKey(publicKey, key string) (retunKey string) {
 
 	retunKey = AesDecrypt(publicKey, key) //给一个传过来的key和私有的一个key值
 
-	fmt.Println("asdasd==>", retunKey)
 	return
 }
 
