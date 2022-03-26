@@ -1,0 +1,1 @@
+module "github.com/n1n1n1_owner/prolicense"
