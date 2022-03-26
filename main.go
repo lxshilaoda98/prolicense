@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/n1n1n1_owner/prolicense/pojo"
+	"github.com/lxshilaoda98/prolicense/pojo"
 )
 
 func main() {

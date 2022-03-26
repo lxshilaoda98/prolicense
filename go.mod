@@ -1,1 +1,1 @@
-module "github.com/n1n1n1_owner/prolicense"
+module "github.com/lxshilaoda98/prolicense"
