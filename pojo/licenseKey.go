@@ -35,7 +35,6 @@ func (l *LicenseModel) CheckKey(publicKey, key string) (retunKey string) {
 func (l *LicenseModel) GetKey(key string) {
 	//先获取本机的mac地址
 	macStr := GetKey()
-	fmt.Println(macStr)
 	l.CheckMac = macStr
 	l.s.Code = 0
 	l.s.Msg = "获取成功"
@@ -79,13 +78,14 @@ func AesEncrypt(orig string, key string) string {
 
 //通过mac地址获取key
 func GetKey() (KeyStr string) {
-	data := getMacAddrs()
+	data := GetMacAddrs()
 	for _, v := range data {
 		KeyStr += v
 	}
 	return
 }
-func getMacAddrs() (macAddrs []string) {
+
+func GetMacAddrs() (macAddrs []string) {
 	netInterfaces, err := net.Interfaces()
 	if err != nil {
 		fmt.Printf("fail to get net interfaces: %v", err)
