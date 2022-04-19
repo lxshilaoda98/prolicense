@@ -33,8 +33,13 @@ func (l *LicenseModel) CheckKey(publicKey, key string) (retunKey string) {
 //先获取加密的信息
 //给一个过期的时间
 func (l *LicenseModel) GetKey(key string) {
+	var macStr string
 	//先获取本机的mac地址
-	macStr := GetKey()
+	if l.CheckMac == "" {
+		macStr = GetKey()
+	} else {
+		macStr = l.CheckMac
+	}
 	l.CheckMac = macStr
 	l.s.Code = 0
 	l.s.Msg = "获取成功"
@@ -46,6 +51,15 @@ func (l *LicenseModel) GetKey(key string) {
 	} else {
 		l.LicenseKey = resultKey
 	}
+}
+
+//通过mac地址获取key
+func (l *LicenseModel) GetMACKey() (KeyStr string) {
+	data := GetMacAddrs()
+	for _, v := range data {
+		KeyStr += v
+	}
+	return
 }
 
 //region 公有方法

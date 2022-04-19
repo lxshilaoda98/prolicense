@@ -16,11 +16,14 @@ import (
 //SipNumber  int    `json:"sip_number"`  //sip的数量
 func main() {
 	var li = pojo.LicenseModel{}
-	li.SipNumber = 500
+	li.SipNumber = 1
 	li.EndTime = 2
+	li.CheckMac = "00:ff:31:a9:1c:a000:ff:28:c0:3e:1a28:d0:ea:5c:9b:492a:d0:ea:5c:9b:4938:f3:ab:43:c1:3600:50:56:c0:00:0100:50:56:c0:00:0828:d0:ea:5c:9b:4d00:15:5d:4b:09:06"
 	li.GetKey("Lsdiuqwjasksdiasdlwoerfasdwerfas")
 	fmt.Printf("本机MAC地址：%s\nkey：%s\n过期时间:%d\n数量：%d\n", li.CheckMac, li.LicenseKey, li.EndTime, li.SipNumber)
 
+	macKey := li.GetMACKey()
+	fmt.Println("macKey :", macKey)
 	//
 	////li.CheckKey("asdiuqwjasksdiasdlwoerfasdwerfas")
 	////传入li的时间。如果为0就是永不过期1
